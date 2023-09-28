@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/features/onBoarding/presetntation/view/on_board_screen.dart';
 
 void main() {
@@ -10,18 +11,25 @@ class BooksApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          iconTheme: IconThemeData(
-            color: Colors.black,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              elevation: 0.0,
+              backgroundColor: Colors.transparent,
+              iconTheme: IconThemeData(
+                color: Colors.black,
+              ),
+            ),
+            fontFamily: 'HK GROTESK',
           ),
-        ),
-        fontFamily: 'HK GROTESK',
-      ),
-      home: const OnBoardScreen(),
+          home: const OnBoardScreen(),
+        );
+      },
     );
   }
 }
