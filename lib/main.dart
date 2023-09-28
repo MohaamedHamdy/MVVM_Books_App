@@ -15,6 +15,9 @@ class BooksApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           elevation: 0.0,
           backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
         ),
         fontFamily: 'HK GROTESK',
       ),
