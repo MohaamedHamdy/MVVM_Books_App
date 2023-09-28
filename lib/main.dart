@@ -10,8 +10,15 @@ class BooksApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: OnBoardScreen(),
+    return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+        ),
+        fontFamily: 'HK GROTESK',
+      ),
+      home: const OnBoardScreen(),
     );
   }
 }
