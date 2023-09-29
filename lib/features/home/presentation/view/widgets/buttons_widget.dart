@@ -15,70 +15,90 @@ class ButtonsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return !isColumn
-        ? Row(
-            children: [
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  minimumSize: Size(87.w, 26.h),
-                  backgroundColor: kPrimaryColor,
-                ),
-                child: Text(
-                  'Grab Now',
-                  style: Style.styles12.copyWith(
-                    color: Colors.white,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 6.w,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Learn More',
-                  style: Style.styles12.copyWith(
-                    color: Colors.black,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          )
-        : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  minimumSize: Size(65.w, 28.h),
-                  backgroundColor: kPrimaryColor,
-                ),
-                child: Text(
-                  'Grab Now',
-                  style: Style.styles12.copyWith(
-                    color: Colors.white,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Learn More',
-                  style: Style.styles12.copyWith(
-                    color: Colors.black,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          );
+    return !isColumn ? const ButtonsRow() : const ButtonsColumn();
+  }
+}
+
+class ButtonsRow extends StatelessWidget {
+  const ButtonsRow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            minimumSize: Size(87.w, 26.h),
+            backgroundColor: kPrimaryColor,
+          ),
+          child: Text(
+            'Grab Now',
+            style: Style.styles12.copyWith(
+              color: Colors.white,
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 6.w,
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'Learn More',
+            style: Style.styles12.copyWith(
+              color: Colors.black,
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ButtonsColumn extends StatelessWidget {
+  const ButtonsColumn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            minimumSize: Size(65.w, 28.h),
+            backgroundColor: kPrimaryColor,
+          ),
+          child: Text(
+            'Grab Now',
+            style: Style.styles12.copyWith(
+              color: Colors.white,
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'Learn More',
+            style: Style.styles12.copyWith(
+              color: Colors.black,
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
