@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
+import 'package:mvvm_books/features/home/presentation/view/widgets/buttons_widget.dart';
 
 class BookOfTheWeekWidget extends StatelessWidget {
   const BookOfTheWeekWidget({
@@ -27,72 +28,51 @@ class BookOfTheWeekWidget extends StatelessWidget {
               Image.asset(
                 'assets/images/book.png',
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 20.0.h),
-                child: Column(
-                  children: [
-                    Text(
-                      'The Psychology of Money',
-                      style: Style.styles16.copyWith(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 8.h,
-                    ),
-                    SizedBox(
-                      width: 180,
-                      child: Text(
-                        'The psychology of money is the study of our behavior with money. Success with money isn\'t about knowledge, IQ or how good you are at math. It\'s about behavior, and everyone is prone to certain behaviors over others.',
-                        style: Style.styles12.copyWith(
-                          fontSize: 9.sp,
-                          color: kGreyColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4.h,
-                    ),
-                    Row(
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            minimumSize: Size(87.w, 26.h),
-                            backgroundColor: kPrimaryColor,
-                          ),
-                          child: Text(
-                            'Grab Now',
-                            style: Style.styles12.copyWith(
-                              color: Colors.white,
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 6.w,
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Learn More',
-                            style: Style.styles12.copyWith(
-                              color: Colors.black,
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              const RightSection(),
             ]),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class RightSection extends StatelessWidget {
+  const RightSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 20.0.h),
+      child: Column(
+        children: [
+          Text(
+            'The Psychology of Money',
+            style: Style.styles16.copyWith(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(
+            height: 8.h,
+          ),
+          SizedBox(
+            width: 180,
+            child: Text(
+              'The psychology of money is the study of our behavior with money. Success with money isn\'t about knowledge, IQ or how good you are at math. It\'s about behavior, and everyone is prone to certain behaviors over others.',
+              style: Style.styles12.copyWith(
+                fontSize: 9.sp,
+                color: kGreyColor,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 4.h,
+          ),
+          const ButtonsWidget(),
         ],
       ),
     );
