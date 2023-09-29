@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_app_bar.dart';
 import 'images_on_board.dart';
+import 'slider_widget.dart';
 import 'text_section.dart';
 
 class OnBoardBody extends StatelessWidget {
@@ -30,6 +31,8 @@ class OnBoardBody extends StatelessWidget {
             TextSection(
               index: index,
             ),
+            const Spacer(),
+            SliderWidget(index: index),
           ],
         );
       },
