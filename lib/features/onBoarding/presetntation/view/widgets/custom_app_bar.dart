@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {},
-            child: const Text(
+            child: Text(
               'Skip',
               style: Style.styles16,
             ),

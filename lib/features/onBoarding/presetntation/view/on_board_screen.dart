@@ -8,7 +8,9 @@ class OnBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: OnBoardBody()),
+      body: SafeArea(
+        child: OnBoardBody(),
+      ),
     );
   }
 }
