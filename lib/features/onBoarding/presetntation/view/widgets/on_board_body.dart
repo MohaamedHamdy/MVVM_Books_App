@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_app_bar.dart';
+import 'images_on_board.dart';
 
 class OnBoardBody extends StatelessWidget {
   const OnBoardBody({super.key});
@@ -14,7 +15,9 @@ class OnBoardBody extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            const CustomAppBar(),
+            CustomAppBar(
+              index: index,
+            ),
             Padding(
               padding: EdgeInsets.only(
                 left: 20.0.w,
@@ -27,30 +30,6 @@ class OnBoardBody extends StatelessWidget {
           ],
         );
       },
-    );
-  }
-}
-
-class ImagesOnBoard extends StatelessWidget {
-  const ImagesOnBoard({
-    Key? key,
-    required this.index,
-  }) : super(key: key);
-
-  final int index;
-
-  static List images = [
-    'assets/images/onBoard1.png',
-    'assets/images/onBoard2.png',
-    'assets/images/onBoard3.png'
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.cover,
-      child: Image.asset(
-        images[index],
-      ),
     );
   }
 }
