@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:mvvm_books/constants.dart';
 // import 'package:mvvm_books/core/utils/styles.dart';
-import 'package:mvvm_books/features/home/presentation/view/widgets/book_of_the_week.dart';
+import 'package:mvvm_books/features/home/presentation/view/widgets/home_screen_column.dart';
 
 import 'package:mvvm_books/features/home/presentation/view/widgets/custom_app_bar.dart';
 
@@ -20,7 +20,7 @@ class HomeScreenBody extends StatelessWidget {
             child: Image.asset('assets/images/Vector1.png'),
           ),
           const CustomAppBar(),
-          const BookOfTheWeekWidget(),
+          const HomeScreenColumn(),
         ],
       ),
     );

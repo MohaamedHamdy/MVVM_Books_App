@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
-import 'package:mvvm_books/features/home/presentation/view/widgets/buttons_widget.dart';
+
+import 'buttons_widget.dart';
 
 class BookOfTheWeekWidget extends StatelessWidget {
   const BookOfTheWeekWidget({
@@ -11,28 +12,19 @@ class BookOfTheWeekWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 90.h,
-      left: 18.w,
-      right: 18.w,
-      child: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 180.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20.0.r),
-            ),
-            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Image.asset(
-                'assets/images/book.png',
-              ),
-              const RightSection(),
-            ]),
-          ),
-        ],
+    return Container(
+      width: double.infinity,
+      height: 180.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0.r),
       ),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Image.asset(
+          'assets/images/book.png',
+        ),
+        const RightSection(),
+      ]),
     );
   }
 }
