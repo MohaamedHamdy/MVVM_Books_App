@@ -1,0 +1,100 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mvvm_books/constants.dart';
+import 'package:mvvm_books/core/utils/styles.dart';
+
+class BookOfTheWeekWidget extends StatelessWidget {
+  const BookOfTheWeekWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 90.h,
+      left: 18.w,
+      right: 18.w,
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 180.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20.0.r),
+            ),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Image.asset(
+                'assets/images/book.png',
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20.0.h),
+                child: Column(
+                  children: [
+                    Text(
+                      'The Psychology of Money',
+                      style: Style.styles16.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    SizedBox(
+                      width: 180,
+                      child: Text(
+                        'The psychology of money is the study of our behavior with money. Success with money isn\'t about knowledge, IQ or how good you are at math. It\'s about behavior, and everyone is prone to certain behaviors over others.',
+                        style: Style.styles12.copyWith(
+                          fontSize: 9.sp,
+                          color: kGreyColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            minimumSize: Size(87.w, 26.h),
+                            backgroundColor: kPrimaryColor,
+                          ),
+                          child: Text(
+                            'Grab Now',
+                            style: Style.styles12.copyWith(
+                              color: Colors.white,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 6.w,
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Learn More',
+                            style: Style.styles12.copyWith(
+                              color: Colors.black,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ]),
+          ),
+        ],
+      ),
+    );
+  }
+}

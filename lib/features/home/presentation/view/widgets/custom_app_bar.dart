@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 8.w,
+      left: 4.w,
       top: 43.h,
       child: Row(
         children: [
