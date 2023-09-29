@@ -62,7 +62,7 @@ class ButtonsWidget extends StatelessWidget {
                   'Grab Now',
                   style: Style.styles12.copyWith(
                     color: Colors.white,
-                    fontSize: 8.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -73,7 +73,7 @@ class ButtonsWidget extends StatelessWidget {
                   'Learn More',
                   style: Style.styles12.copyWith(
                     color: Colors.black,
-                    fontSize: 8.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
