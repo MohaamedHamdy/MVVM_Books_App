@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:mvvm_books/core/utils/router.dart';
 
 import 'package:mvvm_books/core/utils/styles.dart';
 
@@ -26,7 +27,9 @@ class CustomAppBar extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRouter.kHomeScreen);
+                  },
                   child: Text(
                     'Skip',
                     style: Style.styles16,

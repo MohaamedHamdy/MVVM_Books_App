@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
+import 'package:mvvm_books/core/utils/router.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
 class SliderWidget extends StatelessWidget {
@@ -31,7 +32,9 @@ class SliderWidget extends StatelessWidget {
         : Padding(
             padding: EdgeInsets.only(bottom: 20.h),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, AppRouter.kHomeScreen);
+              },
               style: TextButton.styleFrom(
                 minimumSize: const Size(230, 55),
                 backgroundColor: kPrimaryColor,
