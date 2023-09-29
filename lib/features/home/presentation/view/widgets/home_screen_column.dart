@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 import 'book_of_the_week.dart';
-import 'recommandad_for_you_list_view.dart';
+import 'recommandad_for_you_page_builder.dart';
 
 class HomeScreenColumn extends StatelessWidget {
   const HomeScreenColumn({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -29,7 +28,7 @@ class HomeScreenColumn extends StatelessWidget {
           SizedBox(
             height: 6.h,
           ),
-          const RecommandedForYouListView(),
+          const RecommandadForYouPageBuilder(),
         ],
       ),
     );

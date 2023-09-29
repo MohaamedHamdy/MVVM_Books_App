@@ -13,12 +13,14 @@ class RecommandedForYouListView extends StatelessWidget {
       child: ListView.builder(
         padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
-        itemCount: 12,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 4,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 10.0.w),
+            padding: EdgeInsets.only(right: 5.0.w, left: 5.w),
             child: Container(
-              width: 100,
+              width: 78.w,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
