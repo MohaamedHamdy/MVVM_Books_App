@@ -12,7 +12,6 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // width: double.maxFinite,
       height: double.maxFinite,
       child: Stack(
         children: [

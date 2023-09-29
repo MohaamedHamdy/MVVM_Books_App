@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
+import 'package:mvvm_books/core/utils/router.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
 import 'buttons_widget.dart';
@@ -12,24 +13,29 @@ class BookOfTheWeekWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 16.0.w),
-      child: Material(
-        borderRadius: BorderRadius.circular(20.0.r),
-        elevation: 3.0,
-        child: Container(
-          width: double.infinity,
-          height: 160.h,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.0.r),
-          ),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Image.asset(
-              'assets/images/book.png',
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AppRouter.kBookDetails);
+      },
+      child: Padding(
+        padding: EdgeInsets.only(right: 16.0.w),
+        child: Material(
+          borderRadius: BorderRadius.circular(20.0.r),
+          elevation: 3.0,
+          child: Container(
+            width: double.infinity,
+            height: 160.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20.0.r),
             ),
-            const RightSection(),
-          ]),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Image.asset(
+                'assets/images/book.png',
+              ),
+              const RightSection(),
+            ]),
+          ),
         ),
       ),
     );

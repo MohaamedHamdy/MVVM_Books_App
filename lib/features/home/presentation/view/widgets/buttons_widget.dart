@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:mvvm_books/constants.dart';
+import 'package:mvvm_books/core/utils/router.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
 class ButtonsWidget extends StatelessWidget {
@@ -47,7 +48,9 @@ class ButtonsRow extends StatelessWidget {
           width: 6.w,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, AppRouter.kBookDetails);
+          },
           child: Text(
             'Learn More',
             style: Style.styles12.copyWith(
@@ -88,7 +91,9 @@ class ButtonsColumn extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, AppRouter.kBookDetails);
+          },
           child: Text(
             'Learn More',
             style: Style.styles12.copyWith(
