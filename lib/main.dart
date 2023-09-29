@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mvvm_books/features/onBoarding/presetntation/view/on_board_screen.dart';
+import 'package:mvvm_books/core/utils/router.dart';
 
 void main() {
   runApp(const BooksApp());
@@ -27,7 +27,7 @@ class BooksApp extends StatelessWidget {
             ),
             fontFamily: 'HK GROTESK',
           ),
-          home: const OnBoardScreen(),
+          onGenerateRoute: AppRouter.generateRoute,
         );
       },
     );
