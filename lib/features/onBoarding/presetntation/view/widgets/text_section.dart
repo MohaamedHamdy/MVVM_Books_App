@@ -24,7 +24,9 @@ class TextSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 14.h, left: 20.w, right: 20.w),
+      padding: index == 2
+          ? EdgeInsets.only(top: 14.h, left: 20.w, right: 20.w)
+          : EdgeInsets.only(top: 24.h, left: 20.w, right: 20.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
