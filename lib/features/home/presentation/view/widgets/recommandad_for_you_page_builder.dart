@@ -34,6 +34,9 @@ class _RecommandadForYouPageBuilderState
             },
           ),
         ),
+        SizedBox(
+          height: 2.0.h,
+        ),
         RecommandadForYouSlider(myIndex: myIndex),
       ],
     );

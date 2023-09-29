@@ -12,19 +12,26 @@ class BookOfTheWeekWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 160.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
+    return Padding(
+      padding: EdgeInsets.only(right: 16.0.w),
+      child: Material(
         borderRadius: BorderRadius.circular(20.0.r),
-      ),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Image.asset(
-          'assets/images/book.png',
+        elevation: 3.0,
+        child: Container(
+          width: double.infinity,
+          height: 160.h,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20.0.r),
+          ),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Image.asset(
+              'assets/images/book.png',
+            ),
+            const RightSection(),
+          ]),
         ),
-        const RightSection(),
-      ]),
+      ),
     );
   }
 }
