@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'custom_app_bar.dart';
 import 'images_on_board.dart';
+import 'text_section.dart';
 
 class OnBoardBody extends StatelessWidget {
   const OnBoardBody({super.key});
@@ -26,6 +26,9 @@ class OnBoardBody extends StatelessWidget {
               child: ImagesOnBoard(
                 index: index,
               ),
+            ),
+            TextSection(
+              index: index,
             ),
           ],
         );
