@@ -17,12 +17,13 @@ class RecommandadForYouSlider extends StatelessWidget {
       children: List.generate(
         3,
         (sliderIndex) => Container(
-          margin: EdgeInsets.only(right: 4.w),
           height: 12.h,
           width: 12.w,
-          decoration: BoxDecoration(
+          margin: EdgeInsets.only(right: 6.w),
+          child: Material(
+            elevation: 1.0,
             color: sliderIndex == myIndex ? kPrimaryColor : Colors.white,
-            shape: BoxShape.circle,
+            shape: const CircleBorder(),
           ),
         ),
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
-import 'package:mvvm_books/core/utils/router.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
 import 'buttons_widget.dart';
@@ -15,7 +14,7 @@ class BookOfTheWeekWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, AppRouter.kBookDetails);
+        // Navigator.pushNamed(context, AppRouter.kBookDetails);
       },
       child: Padding(
         padding: EdgeInsets.only(right: 16.0.w),
