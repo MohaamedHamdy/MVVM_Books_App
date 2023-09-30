@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
+import 'widgets/log_in_body.dart';
+
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
 
@@ -24,6 +26,7 @@ class LogInScreen extends StatelessWidget {
           ],
         ),
       ),
+      body: const LogInBody(),
     );
   }
 }
