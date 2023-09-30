@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, AppRouter.kHomeScreen);
+                    Navigator.pushNamed(context, AppRouter.kLogIn);
                   },
                   child: Text(
                     'Skip',
