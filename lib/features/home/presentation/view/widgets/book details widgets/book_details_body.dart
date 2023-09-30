@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'author_details.dart';
 import 'book_detail_widget.dart';
+import 'book_details_third_section.dart';
 
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({super.key});
@@ -15,6 +16,7 @@ class BookDetailsBody extends StatelessWidget {
             AuthorDetailsWidget(),
           ],
         ),
+        BookDdetailsThirdSection(),
       ],
     );
   }

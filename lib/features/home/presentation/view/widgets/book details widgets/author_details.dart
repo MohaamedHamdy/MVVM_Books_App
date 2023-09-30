@@ -14,7 +14,7 @@ class AuthorDetailsWidget extends StatelessWidget {
     return Center(
       child: Padding(
         padding: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.34,
+          top: MediaQuery.of(context).size.height * 0.314,
         ),
         child: SizedBox(
           height: 78.h,

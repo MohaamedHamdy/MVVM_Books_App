@@ -12,7 +12,7 @@ class BookDetailWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.37,
         width: double.infinity,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(23, 27, 54, 1),
