@@ -16,7 +16,7 @@ class BookDetailsBody extends StatelessWidget {
             AuthorDetailsWidget(),
           ],
         ),
-        BookDdetailsThirdSection(),
+        BookDetailsThirdSection(),
       ],
     );
   }

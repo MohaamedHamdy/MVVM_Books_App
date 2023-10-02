@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
-class BookDdetailsThirdSection extends StatelessWidget {
-  const BookDdetailsThirdSection({
+class BookDetailsThirdSection extends StatelessWidget {
+  const BookDetailsThirdSection({
     super.key,
   });
 
