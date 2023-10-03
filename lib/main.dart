@@ -8,6 +8,7 @@ import 'package:mvvm_books/features/home/presentation/view%20model/book%20of%20t
 import 'package:mvvm_books/features/home/presentation/view%20model/featured%20books%20cubit/featured_books_cubit.dart';
 
 void main() {
+  setup();
   runApp(const BooksApp());
 }
 
@@ -26,7 +27,7 @@ class BooksApp extends StatelessWidget {
             BlocProvider(
               create: (_) => FeaturedBooksCubit(
                 getIt.get<HomeRepoImpl>(),
-              ),
+              )..fetchFeaturedBooks(),
             ),
             BlocProvider(
               create: (_) => BookOfTheWeekCubit(

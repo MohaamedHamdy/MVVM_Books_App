@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 import 'book_of_the_week.dart';
 import 'popular_books_list_view_item.dart';
+import 'recommandad_for_you_list_view.dart';
 import 'recommandad_for_you_page_builder.dart';
 
 class HomeScreenColumn extends StatelessWidget {
@@ -29,7 +30,8 @@ class HomeScreenColumn extends StatelessWidget {
           SizedBox(
             height: 6.h,
           ),
-          const RecommandadForYouPageBuilder(),
+          // const RecommandadForYouPageBuilder(),
+          const RecommandedForYouListView(),
           SizedBox(
             height: 6.h,
           ),

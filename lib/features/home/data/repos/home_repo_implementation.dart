@@ -20,14 +20,14 @@ class HomeRepoImpl implements HomeRepo {
       List ids = [];
       List<BookModel> books = [];
       for (var id in allIds['items']['id']) {
-        ids.add(id);
+        ids.add(BookModel.fromJson(id));
       }
       var randomId = random.nextInt(ids.length);
 
       var data = await api.get(endPoints: 'volumes/:$randomId');
 
       for (var item in data['items']) {
-        books.add(item);
+        books.add(BookModel.fromJson(item));
       }
 
       return right(books);
@@ -45,7 +45,7 @@ class HomeRepoImpl implements HomeRepo {
       var data = await api.get(endPoints: 'volumes?q=subject:programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(item);
+        books.add(BookModel.fromJson(item));
       }
       return right(books);
     } catch (e) {

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:http/http.dart';
 import 'package:mvvm_books/core/utils/api_service.dart';
 import 'package:mvvm_books/features/home/data/repos/home_repo_implementation.dart';
 
