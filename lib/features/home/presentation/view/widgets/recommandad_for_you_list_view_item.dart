@@ -23,7 +23,7 @@ class RecommandadForYouListItem extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
-                imageUrl ?? '',
+                imageUrl,
               ),
             ),
           ),

@@ -1,11 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mvvm_books/core/utils/styles.dart';
 
 class BookInfoColumn extends StatelessWidget {
   const BookInfoColumn({
-    super.key,
-  });
+    Key? key,
+    required this.title,
+    required this.authorName,
+    required this.review,
+    required this.reviewCount,
+    required this.price,
+  }) : super(key: key);
+  final String title;
+  final String authorName;
+  final String review;
+  final String reviewCount;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +30,7 @@ class BookInfoColumn extends StatelessWidget {
           SizedBox(
             width: 160.w,
             child: Text(
-              'The Steal Like An Artist',
+              title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Style.styles12.copyWith(
@@ -31,7 +43,7 @@ class BookInfoColumn extends StatelessWidget {
             height: 4.0.h,
           ),
           Text(
-            'Mohamed Hamdy',
+            authorName,
             style: Style.styles12.copyWith(
               fontSize: 10.sp,
               fontWeight: FontWeight.w600,
@@ -43,14 +55,14 @@ class BookInfoColumn extends StatelessWidget {
           Row(
             children: [
               Text(
-                '4.8',
+                '5',
                 style: Style.styles12.copyWith(
                   color: const Color.fromRGBO(242, 79, 9, 1),
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                ' | Based on 2k reviews',
+                ' | Based on $reviewCount reviews',
                 style: Style.styles12.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -61,7 +73,7 @@ class BookInfoColumn extends StatelessWidget {
             height: 4.0.h,
           ),
           Text(
-            '\$45.99',
+            price,
             style: Style.styles12.copyWith(
               fontSize: 10.sp,
               fontWeight: FontWeight.w600,
