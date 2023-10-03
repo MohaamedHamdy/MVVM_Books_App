@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:mvvm_books/core/errors/failure.dart';
 import 'package:mvvm_books/core/utils/api_service.dart';
 import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
@@ -31,7 +32,10 @@ class HomeRepoImpl implements HomeRepo {
 
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -45,7 +49,10 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
