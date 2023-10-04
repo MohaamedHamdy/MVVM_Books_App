@@ -35,7 +35,22 @@ class RecommandedForYouListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return Text(state.errorMessage);
         } else {
-          return const CircularProgressIndicator();
+          return SizedBox(
+            height: 120.0.h,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, state) {
+                  return Container(
+                    width: 78.h,
+                    margin: EdgeInsets.only(right: 5.0.w, left: 5.w),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(10.0.r),
+                    ),
+                  );
+                }),
+          );
         }
       },
     );
