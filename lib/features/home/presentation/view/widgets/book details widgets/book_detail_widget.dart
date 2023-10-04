@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
 
 import '../book_of_the_week.dart';
 
 class BookDetailWidget extends StatelessWidget {
   const BookDetailWidget({
     super.key,
+    required this.bookModel,
   });
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Positioned(

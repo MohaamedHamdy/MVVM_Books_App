@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_books/features/authentication/presentation/views/log_in_screen.dart';
 import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
-import 'package:mvvm_books/features/home/data/models/book_model/volume_info.dart';
 import 'package:mvvm_books/features/home/presentation/view/book_details.dart';
 import 'package:mvvm_books/features/home/presentation/view/home_screen.dart';
 import 'package:mvvm_books/features/onBoarding/presetntation/view/on_board_screen.dart';
@@ -22,9 +21,10 @@ class AppRouter {
           return const HomeScreen();
         });
       case kBookDetails:
-        return MaterialPageRoute(builder: (_) {
-          return const BookDetails(
-            bookModel: BookModel(volumeInfo: VolumeInfo()),
+        final book = settings.arguments as BookModel;
+        return MaterialPageRoute(builder: (context) {
+          return BookDetails(
+            bookModel: book,
           );
         });
       case kLogIn:

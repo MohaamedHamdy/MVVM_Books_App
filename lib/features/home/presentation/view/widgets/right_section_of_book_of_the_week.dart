@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
 
 import 'buttons_widget.dart';
 import 'rating_widget.dart';
@@ -11,11 +12,12 @@ import 'rating_widget.dart';
 class RightSection extends StatelessWidget {
   const RightSection({
     Key? key,
+    required this.bookModel,
     required this.isBookDetailPage,
     required this.title,
     required this.description,
   }) : super(key: key);
-
+  final BookModel bookModel;
   final bool isBookDetailPage;
   final String title;
   final String description;
@@ -60,7 +62,11 @@ class RightSection extends StatelessWidget {
           SizedBox(
             height: 4.h,
           ),
-          !isBookDetailPage ? const ButtonsWidget() : const RatingWidget(),
+          !isBookDetailPage
+              ? ButtonsWidget(
+                  bookModel: bookModel,
+                )
+              : const RatingWidget(),
         ],
       ),
     );

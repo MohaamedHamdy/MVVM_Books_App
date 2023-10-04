@@ -40,32 +40,42 @@ class BookOfTheWeekWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0.r),
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 100.w,
-                        height: 140.h,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              state.book[randomId].volumeInfo.imageLinks == null
-                                  ? ''
-                                  : state.book[randomId].volumeInfo.imageLinks!
-                                      .thumbnail!,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10.0.w),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100.w,
+                          height: 140.h,
+                          child: CachedNetworkImage(
+                            imageUrl: isBookDetailPage
+                                ? state.book[randomId].volumeInfo.imageLinks!
+                                    .thumbnail!
+                                : (state.book[randomId].volumeInfo.imageLinks ==
+                                        null
+                                    ? ''
+                                    : state.book[randomId].volumeInfo
+                                        .imageLinks!.thumbnail!),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10.0.w,
-                      ),
-                      RightSection(
-                        isBookDetailPage: isBookDetailPage,
-                        title:
-                            state.book[randomId].volumeInfo.title ?? 'No title',
-                        description:
-                            state.book[randomId].volumeInfo.description ??
-                                'no Description',
-                      ),
-                    ],
+                        SizedBox(
+                          width: 10.0.w,
+                        ),
+                        RightSection(
+                          isBookDetailPage: isBookDetailPage,
+                          title: isBookDetailPage
+                              ? state.book[randomId].volumeInfo.title!
+                              : (state.book[randomId].volumeInfo.title ??
+                                  'No title'),
+                          description: isBookDetailPage
+                              ? state.book[randomId].volumeInfo.description!
+                              : (state.book[randomId].volumeInfo.description ??
+                                  'no Description'),
+                          bookModel: state.book[randomId],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

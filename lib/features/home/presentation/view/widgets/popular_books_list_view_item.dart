@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
 import 'package:mvvm_books/features/home/presentation/view/widgets/buttons_widget.dart';
 
 import 'book_info_column.dart';
@@ -10,6 +10,7 @@ import 'book_info_column.dart';
 class PobularBooksListItem extends StatelessWidget {
   const PobularBooksListItem({
     Key? key,
+    required this.bookModel,
     required this.imageUrl,
     required this.title,
     required this.authorName,
@@ -17,7 +18,7 @@ class PobularBooksListItem extends StatelessWidget {
     required this.reviewCount,
     required this.price,
   }) : super(key: key);
-
+  final BookModel bookModel;
   final String imageUrl;
   final String title;
   final String authorName;
@@ -59,8 +60,9 @@ class PobularBooksListItem extends StatelessWidget {
                   reviewCount: '1',
                   price: '\$0.0',
                 ),
-                const ButtonsWidget(
+                ButtonsWidget(
                   isColumn: true,
+                  bookModel: bookModel,
                 ),
               ],
             ),

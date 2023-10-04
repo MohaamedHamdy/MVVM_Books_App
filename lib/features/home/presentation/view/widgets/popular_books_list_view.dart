@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/volume_info.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../view model/featured books cubit/featured_books_cubit.dart';
@@ -25,6 +27,7 @@ class PopularBooksListView extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.only(bottom: 8.0.h),
                   child: PobularBooksListItem(
+                    bookModel: state.book[index],
                     imageUrl: state.book[index].volumeInfo.imageLinks == null
                         ? ''
                         : state.book[index].volumeInfo.imageLinks!.thumbnail!,
@@ -45,6 +48,7 @@ class PopularBooksListView extends StatelessWidget {
             baseColor: Colors.white,
             highlightColor: Colors.grey,
             child: const PobularBooksListItem(
+              bookModel: BookModel(volumeInfo: VolumeInfo()),
               imageUrl: '',
               title: '',
               authorName: '',

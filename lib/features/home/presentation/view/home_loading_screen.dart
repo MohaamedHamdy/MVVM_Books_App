@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/volume_info.dart';
 import 'package:mvvm_books/features/home/presentation/view/widgets/buttons_widget.dart';
 
 class HomeLoadingScreen extends StatelessWidget {
@@ -66,7 +68,9 @@ class HomeLoadingScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const ButtonsRow(),
+                          const ButtonsRow(
+                            bookModel: BookModel(volumeInfo: VolumeInfo()),
+                          ),
                         ],
                       ),
                     ),

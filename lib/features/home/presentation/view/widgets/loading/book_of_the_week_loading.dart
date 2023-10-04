@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/volume_info.dart';
 
 import '../buttons_widget.dart';
 
@@ -61,7 +63,9 @@ class BookOfTheWeekLoadingWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const ButtonsRow(),
+                  const ButtonsRow(
+                    bookModel: BookModel(volumeInfo: VolumeInfo()),
+                  ),
                 ],
               ),
             ),

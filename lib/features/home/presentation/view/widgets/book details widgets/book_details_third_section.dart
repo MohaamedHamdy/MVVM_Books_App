@@ -1,13 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
 
 class BookDetailsThirdSection extends StatelessWidget {
   const BookDetailsThirdSection({
-    super.key,
-  });
-
+    Key? key,
+    required this.bookModel,
+  }) : super(key: key);
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,14 +28,16 @@ class BookDetailsThirdSection extends StatelessWidget {
           SizedBox(
             height: 10.0.h,
           ),
-          Text(
-            '\'The Psychology of Money\' is an essential read for anyone interested in being better with money. Fast-paced and engaging, this book will help you refine your thoughts towards money. You can finish this book in a week, unlike other books that are too lengthy. The most important emotions in relation to money are fear, guilt, shame and envy. It\'s worth spending some effort to become aware of the emotions that are especially tied to money for you because, without awareness, they will tend to override rational thinking and drive your actions.',
-            style: Style.styles12.copyWith(color: kGreyColor),
+          SizedBox(
+            child: Text(
+              bookModel.volumeInfo.description!,
+              style: Style.styles12.copyWith(color: kGreyColor),
+            ),
           ),
           SizedBox(
             height: 14.0.h,
           ),
-          const NewsWidget(),
+          // const NewsWidget(),
         ],
       ),
     );

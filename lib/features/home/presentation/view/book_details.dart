@@ -28,7 +28,7 @@ class BookDetails extends StatelessWidget {
           ),
         ],
       ),
-      body: const BookDetailsBody(),
+      body: BookDetailsBody(bookModel: bookModel),
     );
   }
 }
