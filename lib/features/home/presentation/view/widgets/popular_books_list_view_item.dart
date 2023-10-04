@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,9 +47,7 @@ class PobularBooksListItem extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 90.w,
-                  child: Image(
-                    image: NetworkImage(imageUrl),
-                  ),
+                  child: CachedNetworkImage(imageUrl: imageUrl),
                 ),
                 SizedBox(
                   width: 4.w,

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,11 +46,12 @@ class BookOfTheWeekWidget extends StatelessWidget {
                       SizedBox(
                         width: 100.w,
                         height: 140.h,
-                        child: Image.network(
-                          state.book[randomId].volumeInfo.imageLinks == null
-                              ? ''
-                              : state.book[randomId].volumeInfo.imageLinks!
-                                  .thumbnail!,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              state.book[randomId].volumeInfo.imageLinks == null
+                                  ? ''
+                                  : state.book[randomId].volumeInfo.imageLinks!
+                                      .thumbnail!,
                         ),
                       ),
                       SizedBox(
