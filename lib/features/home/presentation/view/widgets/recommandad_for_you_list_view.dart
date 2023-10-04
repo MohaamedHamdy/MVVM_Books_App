@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/features/home/presentation/view%20model/featured%20books%20cubit/featured_books_cubit.dart';
+import 'package:shimmer/shimmer.dart';
 import 'recommandad_for_you_list_view_item.dart';
 
 class RecommandedForYouListView extends StatelessWidget {
@@ -35,21 +36,25 @@ class RecommandedForYouListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return Text(state.errorMessage);
         } else {
-          return SizedBox(
-            height: 120.0.h,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, state) {
-                  return Container(
-                    width: 78.h,
-                    margin: EdgeInsets.only(right: 5.0.w, left: 5.w),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(10.0.r),
-                    ),
-                  );
-                }),
+          return Shimmer.fromColors(
+            baseColor: Colors.white,
+            highlightColor: Colors.grey.withOpacity(0.3),
+            child: SizedBox(
+              height: 120.0.h,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, state) {
+                    return Container(
+                      width: 78.h,
+                      margin: EdgeInsets.only(right: 5.0.w, left: 5.w),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(10.0.r),
+                      ),
+                    );
+                  }),
+            ),
           );
         }
       },
