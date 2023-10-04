@@ -1,5 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mvvm_books/constants.dart';
 import 'package:mvvm_books/core/utils/styles.dart';
 
@@ -10,9 +12,13 @@ class RightSection extends StatelessWidget {
   const RightSection({
     Key? key,
     required this.isBookDetailPage,
+    required this.title,
+    required this.description,
   }) : super(key: key);
 
   final bool isBookDetailPage;
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +27,17 @@ class RightSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'The Psychology of Money',
-            style: Style.styles16.copyWith(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: !isBookDetailPage ? Colors.black : Colors.white,
+          SizedBox(
+            width: 200.w,
+            child: Text(
+              title,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 3,
+              style: Style.styles16.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: !isBookDetailPage ? Colors.black : Colors.white,
+              ),
             ),
           ),
           SizedBox(
@@ -34,8 +45,9 @@ class RightSection extends StatelessWidget {
           ),
           SizedBox(
             width: !isBookDetailPage ? 180.w : 200.w,
+            height: !isBookDetailPage ? 50.h : 60.h,
             child: Text(
-              'The psychology of money is the study of our behavior with money. Success with money isn\'t about knowledge, IQ or how good you are at math. It\'s about behavior, and everyone is prone to certain behaviors over others.',
+              description,
               style: Style.styles12.copyWith(
                 fontSize: 9.sp,
                 color: kGreyColor,

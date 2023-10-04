@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:mvvm_books/core/errors/failure.dart';
 import 'package:mvvm_books/core/utils/api_service.dart';
 import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
@@ -19,12 +20,12 @@ class HomeRepoImpl implements HomeRepo {
       var allIds = await api.get(endPoints: 'volumes?q=subject:programming');
       List ids = [];
       List<BookModel> books = [];
-      for (var id in allIds['items']['id']) {
-        ids.add(BookModel.fromJson(id));
-      }
-      var randomId = random.nextInt(ids.length);
-
-      var data = await api.get(endPoints: 'volumes/:$randomId');
+      // for (var id in allIds['items']['id']) {
+      //   ids.add(BookModel.fromJson(id));
+      // }
+      // var randomId = random.nextInt(ids.length);
+      // debugPrint('$randomId');
+      var data = await api.get(endPoints: 'volumes/:yA2SR4DgU5wC');
 
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -33,8 +34,10 @@ class HomeRepoImpl implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
+        debugPrint('hello');
         return left(ServerFailure.fromDioError(e));
       }
+      debugPrint('hiii');
       return left(ServerFailure(e.toString()));
     }
   }

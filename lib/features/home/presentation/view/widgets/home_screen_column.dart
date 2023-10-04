@@ -42,7 +42,7 @@ class HomeScreenColumn extends StatelessWidget {
           SizedBox(
             height: 8.h,
           ),
-          PopularBooksListView()
+          const PopularBooksListView()
         ],
       ),
     );

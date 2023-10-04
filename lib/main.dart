@@ -32,7 +32,7 @@ class BooksApp extends StatelessWidget {
             BlocProvider(
               create: (_) => BookOfTheWeekCubit(
                 getIt.get<HomeRepoImpl>(),
-              ),
+              )..fetchBookOfTheWeekBook(),
             ),
           ],
           child: MaterialApp(
