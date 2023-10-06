@@ -20,11 +20,12 @@ class RecommandedForYouListView extends StatelessWidget {
             child: ListView.builder(
               padding: EdgeInsets.zero,
               scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              // physics: const NeverScrollableScrollPhysics(),
+              // shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
               itemCount: state.book.length,
               itemBuilder: (context, index) {
                 return RecommandadForYouListItem(
+                  bookModel: state.book[index],
                   imageUrl: state.book[index].volumeInfo.imageLinks == null
                       ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
                       : state
