@@ -29,9 +29,13 @@ class BookDetailsThirdSection extends StatelessWidget {
             height: 10.0.h,
           ),
           SizedBox(
-            child: Text(
-              bookModel.volumeInfo.description!,
-              style: Style.styles12.copyWith(color: kGreyColor),
+            height: 320.h,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Text(
+                bookModel.volumeInfo.description!,
+                style: Style.styles12.copyWith(color: kGreyColor),
+              ),
             ),
           ),
           SizedBox(

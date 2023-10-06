@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +22,9 @@ class ButtonsWidget extends StatelessWidget {
         ? ButtonsRow(
             bookModel: bookModel,
           )
-        : const ButtonsColumn();
+        : ButtonsColumn(
+            bookModel: bookModel,
+          );
   }
 }
 
@@ -75,8 +78,10 @@ class ButtonsRow extends StatelessWidget {
 
 class ButtonsColumn extends StatelessWidget {
   const ButtonsColumn({
-    super.key,
-  });
+    Key? key,
+    required this.bookModel,
+  }) : super(key: key);
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +105,8 @@ class ButtonsColumn extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, AppRouter.kBookDetails);
+            Navigator.pushNamed(context, AppRouter.kBookDetails,
+                arguments: bookModel);
           },
           child: Text(
             'Learn More',
