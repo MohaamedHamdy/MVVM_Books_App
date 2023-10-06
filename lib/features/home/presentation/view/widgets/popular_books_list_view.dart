@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_books/core/widgets/home_loading_screen.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../view model/featured books cubit/featured_books_cubit.dart';
 import 'popular_books_list_view_item.dart';
 
@@ -62,10 +63,17 @@ class PopularBooksListView extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemCount: 3,
               itemBuilder: (context, index) {
-                return const PopularBookLoadingListItem();
+                return Shimmer.fromColors(
+                    baseColor: Colors.white,
+                    highlightColor: Colors.grey.withOpacity(0.3),
+                    child: const PopularBookLoadingListItem());
               },
             ),
           );
+          // return Shimmer.fromColors(
+          //     baseColor: Colors.white,
+          //     highlightColor: Colors.grey.withOpacity(0.3),
+          //     child: const PopularLoading());
         }
       },
     );

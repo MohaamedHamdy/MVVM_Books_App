@@ -78,3 +78,46 @@ class BookOfTheWeekLoadingWidget extends StatelessWidget {
     );
   }
 }
+
+class PopularLoading extends StatelessWidget {
+  const PopularLoading({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 8.0.w),
+          child: Container(
+            width: 90.w,
+            height: 140.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(10.0.r),
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 4.w,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            5,
+            (index) => Container(
+              width: 140.w,
+              height: 10.h,
+              margin: EdgeInsets.only(bottom: 8.0.h),
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(20.0.r),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

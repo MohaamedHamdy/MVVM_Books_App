@@ -119,52 +119,42 @@ class PopularBookLoadingListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 16.w, bottom: 10.h),
-      child: Material(
-        borderRadius: BorderRadius.circular(10.0.r),
-        elevation: 3.0,
-        color: Colors.white,
-        child: Container(
-          margin: const EdgeInsets.all(10.0),
-          height: 100.h,
-          width: double.infinity,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 90.w,
-                height: double.infinity,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 90.w,
+            height: 120.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(10.0.r),
+            ),
+          ),
+          SizedBox(
+            width: 4.w,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              5,
+              (index) => Container(
+                width: 140.w,
+                height: 10.h,
+                margin: EdgeInsets.only(bottom: 8.0.h),
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(10.0.r),
+                  borderRadius: BorderRadius.circular(20.0.r),
                 ),
               ),
-              SizedBox(
-                width: 4.w,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  5,
-                  (index) => Container(
-                    width: 140.w,
-                    height: 10.h,
-                    margin: EdgeInsets.only(bottom: 8.0.h),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(20.0.r),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 8.w,
-              ),
-              const ButtonsColumn(
-                bookModel: BookModel(volumeInfo: VolumeInfo()),
-              ),
-            ],
+            ),
           ),
-        ),
+          // SizedBox(
+          //   width: 8.w,
+          // ),
+          // const ButtonsColumn(
+          //   bookModel: BookModel(volumeInfo: VolumeInfo()),
+          // ),
+        ],
       ),
     );
   }
