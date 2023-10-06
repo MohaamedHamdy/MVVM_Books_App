@@ -12,10 +12,8 @@ import 'right_section_of_book_of_the_week.dart';
 class BookOfTheWeekWidget extends StatelessWidget {
   const BookOfTheWeekWidget({
     Key? key,
-    this.isBookDetailPage = false,
   }) : super(key: key);
 
-  final bool isBookDetailPage;
   static final random = Random();
   static final randomId = random.nextInt(10);
 
@@ -32,11 +30,11 @@ class BookOfTheWeekWidget extends StatelessWidget {
               padding: EdgeInsets.only(right: 16.0.w),
               child: Material(
                 borderRadius: BorderRadius.circular(20.0.r),
-                elevation: !isBookDetailPage ? 3.0 : 0.0,
-                color: !isBookDetailPage ? Colors.white : Colors.transparent,
+                elevation: 3.0,
+                color: Colors.white,
                 child: Container(
                   width: double.infinity,
-                  height: !isBookDetailPage ? 160.h : 190.h,
+                  height: 160.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0.r),
                   ),
@@ -49,10 +47,8 @@ class BookOfTheWeekWidget extends StatelessWidget {
                           width: 100.w,
                           height: 140.h,
                           child: CachedNetworkImage(
-                            imageUrl: isBookDetailPage
-                                ? state.book[randomId].volumeInfo.imageLinks!
-                                    .thumbnail!
-                                : (state.book[randomId].volumeInfo.imageLinks ==
+                            imageUrl:
+                                (state.book[randomId].volumeInfo.imageLinks ==
                                         null
                                     ? ''
                                     : state.book[randomId].volumeInfo
@@ -63,14 +59,10 @@ class BookOfTheWeekWidget extends StatelessWidget {
                           width: 10.0.w,
                         ),
                         RightSection(
-                          isBookDetailPage: isBookDetailPage,
-                          title: isBookDetailPage
-                              ? state.book[randomId].volumeInfo.title!
-                              : (state.book[randomId].volumeInfo.title ??
-                                  'No title'),
-                          description: isBookDetailPage
-                              ? state.book[randomId].volumeInfo.description!
-                              : (state.book[randomId].volumeInfo.description ??
+                          title: (state.book[randomId].volumeInfo.title ??
+                              'No title'),
+                          description:
+                              (state.book[randomId].volumeInfo.description ??
                                   'no Description'),
                           bookModel: state.book[randomId],
                         ),
