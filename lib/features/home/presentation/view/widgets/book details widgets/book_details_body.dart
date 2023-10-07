@@ -23,7 +23,9 @@ class BookDetailsBody extends StatelessWidget {
             BookDetailWidget(
               bookModel: bookModel,
             ),
-            const AuthorDetailsWidget(),
+            AuthorDetailsWidget(
+              bookModel: bookModel,
+            ),
           ],
         ),
         BookDetailsThirdSection(

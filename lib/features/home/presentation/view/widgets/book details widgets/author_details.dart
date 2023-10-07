@@ -1,13 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:mvvm_books/constants.dart';
+import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart';
 
 import 'author_name.dart';
 
 class AuthorDetailsWidget extends StatelessWidget {
   const AuthorDetailsWidget({
-    super.key,
-  });
+    Key? key,
+    required this.bookModel,
+  }) : super(key: key);
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +42,9 @@ class AuthorDetailsWidget extends StatelessWidget {
                   SizedBox(
                     width: 10.0.w,
                   ),
-                  const AuthorName(),
+                  AuthorName(
+                    bookModel: bookModel,
+                  ),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
