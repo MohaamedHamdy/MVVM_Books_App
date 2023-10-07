@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mvvm_books/core/widgets/home_loading_screen.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../view model/featured books cubit/featured_books_cubit.dart';
+import 'loading/popular_loading_list_item.dart';
 import 'popular_books_list_view_item.dart';
 
 class PopularBooksListView extends StatelessWidget {
@@ -43,30 +43,19 @@ class PopularBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return Text(state.errorMessage);
         } else {
-          // return Shimmer.fromColors(
-          //   baseColor: Colors.white,
-          //   highlightColor: Colors.grey,
-          //   child: const PobularBooksListItem(
-          //     bookModel: BookModel(volumeInfo: VolumeInfo()),
-          //     imageUrl: '',
-          //     title: '',
-          //     authorName: '',
-          //     review: '',
-          //     reviewCount: '',
-          //     price: '',
-          //   ),
-          // );
           return SizedBox(
             height: 300,
             width: double.infinity,
             child: ListView.builder(
               padding: EdgeInsets.zero,
+              physics: const BouncingScrollPhysics(),
               itemCount: 3,
               itemBuilder: (context, index) {
                 return Shimmer.fromColors(
-                    baseColor: Colors.white,
-                    highlightColor: Colors.grey.withOpacity(0.3),
-                    child: const PopularBookLoadingListItem());
+                  baseColor: Colors.white,
+                  highlightColor: Colors.grey,
+                  child: const PopularBookLoadingListItem(),
+                );
               },
             ),
           );

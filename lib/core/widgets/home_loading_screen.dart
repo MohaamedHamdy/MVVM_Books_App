@@ -5,6 +5,12 @@ import 'package:mvvm_books/features/home/data/models/book_model/book_model.dart'
 import 'package:mvvm_books/features/home/data/models/book_model/volume_info.dart';
 import 'package:mvvm_books/features/home/presentation/view/widgets/buttons_widget.dart';
 
+/* this is mainly a draft screen was made to be the whole 
+ * home loading screen at loading state but it just doesn't 
+ * make sense to it just existed to see what every wiget should look like 
+ * so no CLEAN CODE HERE :DDDDD
+ */
+
 class HomeLoadingScreen extends StatelessWidget {
   const HomeLoadingScreen({super.key});
 
@@ -107,54 +113,6 @@ class HomeLoadingScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class PopularBookLoadingListItem extends StatelessWidget {
-  const PopularBookLoadingListItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 16.w, bottom: 10.h),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 90.w,
-            height: 120.h,
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(10.0.r),
-            ),
-          ),
-          SizedBox(
-            width: 4.w,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              5,
-              (index) => Container(
-                width: 140.w,
-                height: 10.h,
-                margin: EdgeInsets.only(bottom: 8.0.h),
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(20.0.r),
-                ),
-              ),
-            ),
-          ),
-          // SizedBox(
-          //   width: 8.w,
-          // ),
-          // const ButtonsColumn(
-          //   bookModel: BookModel(volumeInfo: VolumeInfo()),
-          // ),
-        ],
       ),
     );
   }
