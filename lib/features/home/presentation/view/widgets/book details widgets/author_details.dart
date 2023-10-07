@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,10 +33,6 @@ class AuthorDetailsWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.black,
-                    radius: 24.r,
-                  ),
                   SizedBox(
                     width: 10.0.w,
                   ),
