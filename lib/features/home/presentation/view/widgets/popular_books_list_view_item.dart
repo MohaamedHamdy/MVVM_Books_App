@@ -38,8 +38,9 @@ class PobularBooksListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0.r),
           elevation: 3.0,
           child: Container(
-            height: 100.h,
+            // height: 100.h,
             width: double.infinity,
+            margin: EdgeInsets.only(bottom: 0.0.h),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10.0.r),
@@ -47,7 +48,7 @@ class PobularBooksListItem extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(
-                  width: 90.w,
+                  width: 80.w,
                   child: CachedNetworkImage(imageUrl: imageUrl),
                 ),
                 SizedBox(
